@@ -1,6 +1,7 @@
 import Fastify from 'fastify';
 import FastifyCors from '@fastify/cors';
 import { createClient } from '@supabase/supabase-js';
+import Serverless from 'serverless-http';
 
 const DASHBOARD = "DASHBOARD";
 const SUPABASE_BASEURL = "https://zdbpnksnpemcsceppiem.supabase.co";
@@ -62,3 +63,5 @@ try {
   fastify.log.error(err)
   process.exit(1)
 }
+
+export const handler = Serverless(fastify);
