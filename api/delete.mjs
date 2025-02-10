@@ -26,11 +26,4 @@ fastify.route({
   }
 });
 
-try {
-  await fastify.listen({ port: process.env.port || 3000 })
-} catch (err) {
-  fastify.log.error(err)
-  process.exit(1)
-}
-
 export const handler = Serverless(fastify);

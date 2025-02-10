@@ -21,16 +21,13 @@ fastify.route({
   method : 'GET',
   url : "/all",
   handler : async (request, reply) => {
-    let { data } = await supabase.from(DASHBOARD).select();
-    return data;
+    let { data, error } = await supabase.from(DASHBOARD).select();
+    if (error) {
+        return error;
+    } else {
+        return data;
+    }
   }
 });
-
-try {
-  await fastify.listen({ port: process.env.port || 3000 })
-} catch (err) {
-  fastify.log.error(err)
-  process.exit(1)
-}
 
 export const handler = Serverless(fastify);
