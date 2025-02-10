@@ -1,8 +1,11 @@
 {
+    "projectId":"prj_HGM3P4asYdNvIALrQIGDjwPmFtib",
+    "orgId":"team_TWiNdoNN1FQK0Vx16RAHmwzw",
     "rewrites": [
-      {
-        "source": "/(.*)",
-        "destination": "/api"
-      }
-    ]
+        {
+            "source": "/(.*)",
+            "destination": "/api"
+        }
+    ],
+    "regions" : ["icn1"]
 }

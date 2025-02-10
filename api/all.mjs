@@ -22,6 +22,7 @@ fastify.route({
   url : "/all",
   handler : async (request, reply) => {
     let { data } = await supabase.from(DASHBOARD).select();
+    console.log("GET /all request . . .");
     return data;
   }
 });
